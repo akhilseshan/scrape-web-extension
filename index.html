@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrape Web</title>
+  <link href="bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="main-container">
+    <h1>Scrape Web</h1>
+    <form id="data-input-form">
+      <div id="data-input-group">
+        <div class="input-group input-group-sm mb-3">
+          <span class="input-group-text">CSS Selector</span>
+          <input type="text" class="form-control css-selector-input">
+          <span class="input-group-text">Key</span>
+          <input type="text" class="form-control key-input">
+          <span class="input-group-text">Split</span>
+          <input type="text" class="form-control split-value-input">
+        </div>
+      </div>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button class="btn btn-success me-md-2" type="button" id="add-field-button">Add Field</button>
+        <button class="btn btn-secondary me-md-2" type="button" id="clear-fields-button">Clear All</button>
+        <button class="btn btn-primary me-md-2" type="submit" id="data-submit-button">Scrape</button>
+        <button class="btn btn-warning me-md-2" type="button" id="local-storage-download">Download</button>
+        <button class="btn btn-danger me-md-2" type="button" id="local-storage-clear">Clear Local Storage</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
