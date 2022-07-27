@@ -1,5 +1,5 @@
 const inputGroupTemplate = `<span class="input-group-text">CSS Selector</span>
-<input type="text" class="form-control css-selector-input">
+<input type="text" class="form-control w-25 p-1 css-selector-input">
 <span class="input-group-text">Key</span>
 <input type="text" class="form-control key-input">`;
 
@@ -17,22 +17,21 @@ function getData(inputSchema) {
     const elementSelector = document.querySelector(input.cssSelector);
     if (elementSelector) {
       data[input.key] = elementSelector.innerText;
-      console.log(elementSelector.innerText);
     }
   });
   return data;
 }
 
 function setLocalStorage(value) {
-  chrome.storage.local.set({ data: value }, function (result) {
-    console.log(result);
+  chrome.storage.local.set({ data: value }, function () {
+    console.log("Value added to local storage!");
   });
 }
 
 function downloadLocalStorage() {
   chrome.storage.local.get(null, function (items) {
     var result = JSON.stringify(items);
-    var url = "data:application/json;base64," + btoa(result);
+    var url = "data:text/json;charset=utf-8," + encodeURIComponent(result);
     chrome.downloads.download({
       url: url,
       filename: "data.json",
@@ -58,7 +57,7 @@ document
     event.preventDefault();
     const formData = document.getElementById("data-input-form");
     const inputSchema = [];
-    const dataInputGroupDiv = formData.children[0];
+    const dataInputGroupDiv = formData.children[1];
     for (let i = 0; i < dataInputGroupDiv.childElementCount; i++) {
       const dataInputItem = dataInputGroupDiv.children[i];
       const cssSelector = dataInputItem.querySelector(
@@ -72,12 +71,12 @@ document
         { target: { tabId: tabs[0].id }, func: getData, args: [inputSchema] },
         (results) => {
           chrome.storage.local.get(["data"], function (result) {
-            console.log(result);
-            if (!result.data) {
+            let data = [];
+            data = result.data;
+            if (!data) {
               setLocalStorage([]);
+              data = [];
             }
-            let data = result.data;
-            console.log(results);
             data.push(results[0].result);
             setLocalStorage(data);
           });

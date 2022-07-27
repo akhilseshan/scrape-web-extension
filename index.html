@@ -14,23 +14,21 @@
   <div class="main-container">
     <h1>Scrape Web</h1>
     <form id="data-input-form">
+      <div class="btn-group btn-group-sm" role="group">
+        <button class="btn btn-outline-danger" type="button" id="clear-fields-button">Clear All</button>
+        <button class="btn btn-outline-success" type="button" id="local-storage-download">Download Data</button>
+        <button class="btn btn-outline-danger" type="button" id="local-storage-clear">Clear Local Storage</button>
+      </div>
       <div id="data-input-group">
         <div class="input-group input-group-sm mb-3">
           <span class="input-group-text">CSS Selector</span>
-          <input type="text" class="form-control css-selector-input">
+          <input type="text" class="form-control w-25 p-1 css-selector-input">
           <span class="input-group-text">Key</span>
           <input type="text" class="form-control key-input">
-          <span class="input-group-text">Split</span>
-          <input type="text" class="form-control split-value-input">
         </div>
       </div>
-      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <button class="btn btn-success me-md-2" type="button" id="add-field-button">Add Field</button>
-        <button class="btn btn-secondary me-md-2" type="button" id="clear-fields-button">Clear All</button>
-        <button class="btn btn-primary me-md-2" type="submit" id="data-submit-button">Scrape</button>
-        <button class="btn btn-warning me-md-2" type="button" id="local-storage-download">Download</button>
-        <button class="btn btn-danger me-md-2" type="button" id="local-storage-clear">Clear Local Storage</button>
-      </div>
+      <button class="btn btn-secondary" type="button" id="add-field-button">Add Field</button>
+      <button class="btn btn-primary" type="submit" id="data-submit-button">Scrape Data</button>
     </form>
   </div>
 
