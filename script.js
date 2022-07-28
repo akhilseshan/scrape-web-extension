@@ -3,8 +3,9 @@ const inputGroupTemplate = `<span class="input-group-text">CSS Selector</span>
 <span class="input-group-text">Key</span>
 <input type="text" class="form-control key-input">`;
 
-document.getElementById("data-input-group-fields").style.display = "block";
-document.getElementById("data-input-group-textarea").style.display = "none";
+document.getElementById("data-input-group-fields").style.display = "none";
+document.getElementById("data-input-group-textarea").style.display = "block";
+document.getElementById("add-field-button").style.display = "none";
 
 function getInputGroupTemplate() {
   const inputGroupDiv = document.createElement("div");
