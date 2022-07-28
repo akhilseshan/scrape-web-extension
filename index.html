@@ -19,12 +19,31 @@
         <button class="btn btn-outline-success" type="button" id="local-storage-download">Download Data</button>
         <button class="btn btn-outline-danger" type="button" id="local-storage-clear">Clear Local Storage</button>
       </div>
-      <div id="data-input-group">
+      <div id="data-input-type">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="data-input-type-value" id="input-fields-view"
+            value="fields" checked>
+          <label class="form-check-label" for="input-fields-view">Fields</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="data-input-type-value" id="input-textarea-view"
+            value="textarea">
+          <label class="form-check-label" for="input-textarea-view">Textarea</label>
+        </div>
+      </div>
+      <div id="data-input-group-fields">
         <div class="input-group input-group-sm mb-3">
           <span class="input-group-text">CSS Selector</span>
           <input type="text" class="form-control w-25 p-1 css-selector-input">
           <span class="input-group-text">Key</span>
           <input type="text" class="form-control key-input">
+        </div>
+      </div>
+      <div id="data-input-group-textarea">
+        <div class="form-floating">
+          <textarea class="form-control" placeholder="Insert Schema here" id="data-input-schema-textarea"
+            style="height: 100px"></textarea>
+          <label for="data-input-schema-textarea">Input Schema</label>
         </div>
       </div>
       <button class="btn btn-secondary" type="button" id="add-field-button">Add Field</button>
